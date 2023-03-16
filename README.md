@@ -5,5 +5,5 @@ Tabalhando com Sequelize no Node para criacao de tabelas com o SQL.
 - Sequelize
 
 - Node
-</br>
+- 
 - JAVASCRIPT
