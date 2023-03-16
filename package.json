@@ -1,0 +1,19 @@
+{
+  "name": "NodeJS",
+  "version": "1.0.0",
+  "description": "aplicacao backend com node",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/js/test.js"
+  },
+  "keywords": [],
+  "author": "Wagner Rodrigues",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0",
+    "nodemon": "^2.0.21",
+    "sequelize": "^6.29.0"
+  }
+}
