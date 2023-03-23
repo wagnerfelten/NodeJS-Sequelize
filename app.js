@@ -30,7 +30,15 @@ app.post("/add", (req, res) => {
     }).catch((erro)=> {
         res.send("ERRO NO ENVIO " + erro);
     });
-})
+});
+
+app.get("/delete/:id", (req, res) => {
+    post.destroy({where: {'id': req.params.id}}).then(() => {
+        res.send("DELETADA COM SUCESSO!");
+    }).catch((erro)=> {
+        res.send("Post já deletado!" + erro)
+    })
+});
 
 const PORT = 1919;
 app.listen(PORT, () => console.log(`SERVER RUNNIG https://localhost:${PORT}`));
