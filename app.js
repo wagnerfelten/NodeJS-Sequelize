@@ -11,6 +11,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+app.get("/", (req, res) => {
+    post.findAll({order: [['id', 'DESC']]}).then((posts) => {
+        res.render('home', {posts: posts});
+    })
+});
 
 app.get("/criar", (req, res) => {
     res.render("form");
@@ -21,7 +26,7 @@ app.post("/add", (req, res) => {
         title: req.body.title,
         content: req.body.content
     }).then(()=> {
-       res.redirect('/criar')
+       res.redirect('/')
     }).catch((erro)=> {
         res.send("ERRO NO ENVIO " + erro);
     });
